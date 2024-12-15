@@ -5,11 +5,8 @@ on:
     branches:
       - main
 
-# github.repository => nasdan/auto-azure-deploy
-# ghcr.io/nasdan/auto-azure-deploy:2-2
-
 env:
-  IMAGE_NAME: ghcr.io/jldoradomoles/auto-azure-deploy:2-2
+  IMAGE_NAME: ghcr.io/jldoradomoles/auto-azure-deploy:1-1
 
 permissions:
   contents: 'read'
@@ -38,5 +35,4 @@ jobs:
         with:
           app-name: ${{ secrets.AZURE-APP-NAME }}
           slot-name: 'production'
-          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           images: ${{env.IMAGE_NAME}}
